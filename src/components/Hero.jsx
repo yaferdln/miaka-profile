@@ -1,16 +1,26 @@
+import { useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import AOS from "aos"; // Import AOS
+import "aos/dist/aos.css"; // Import AOS styles
 
 const Hero = () => {
+  useEffect(() => {
+    AOS.init(); // Initialize AOS
+  }, []);
+
   return (
     <section className="pt-16">
       <div className="flex flex-col text-center md:flex-row justify-between items-center h-screen p-4 overflow-hidden">
         {/* Swiper Image Slider */}
-        <div className="w-full md:w-1/2 h-115 overflow-hidden relative">
+        <div
+          className="w-full md:w-1/2 h-115 overflow-hidden relative"
+          data-aos="fade-right" // AOS animation
+        >
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={10}
@@ -61,7 +71,11 @@ const Hero = () => {
         </div>
 
         {/* Right side content */}
-        <div className="w-full md:w-2/3 flex flex-col justify-center items-center p-6">
+        <div
+          className="w-full md:w-2/3 flex flex-col justify-center items-center p-6"
+          data-aos="fade-up" // AOS animation
+          data-aos-delay="500" // Optional delay for staggered effect
+        >
           <h1 className="text-4xl md:text-7xl font-extrabold text-[#8B4513] mb-4 md:mb-8">
             Hi, I'm Miaka
           </h1>

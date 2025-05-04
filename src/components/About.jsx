@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { TbBallTennis, TbIceSkating, TbPlane, TbMusic } from "react-icons/tb";
 import { CiCoffeeCup } from "react-icons/ci";
 import {
@@ -7,6 +8,8 @@ import {
   GiCoffeeCup,
 } from "react-icons/gi";
 import Marquee from "react-fast-marquee";
+import AOS from "aos"; // Import AOS
+import "aos/dist/aos.css"; // Import AOS styles
 
 const hobbies = [
   {
@@ -51,15 +54,25 @@ const foods = [
 ];
 
 const About = () => {
+  useEffect(() => {
+    AOS.init(); // Initialize AOS
+  }, []);
+
   return (
     <section id="about" className="pt-16 min-h-screen w-full">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#8B4513] mb-8 text-center">
+        <h2
+          className="text-3xl md:text-4xl font-bold text-[#8B4513] mb-8 text-center"
+          data-aos="fade-up"
+        >
           About Me
         </h2>
 
         {/* Hobbies Marquee */}
-        <h3 className="text-xl md:text-2xl font-bold text-[#8B4513] mb-4">
+        <h3
+          className="text-xl md:text-2xl font-bold text-[#8B4513] mb-4"
+          data-aos="fade-up"
+        >
           Hobbies
         </h3>
         <Marquee speed={50} gradient={false} autoFill pauseOnHover>
@@ -67,6 +80,8 @@ const About = () => {
             <div
               key={i}
               className="flex flex-col items-center justify-center text-[#8B4513] mx-2 sm:mx-4 gap-1 sm:gap-2 w-auto h-20 sm:h-28 p-1 sm:p-4"
+              data-aos="zoom-in" // AOS animation for each hobby
+              data-aos-delay={i * 100} // Optional delay for staggered effect
             >
               {item.component}
               <span className="text-sm md:text-lg font-bold text-center">
@@ -77,7 +92,10 @@ const About = () => {
         </Marquee>
 
         {/* Favorite Foods Marquee */}
-        <h3 className="text-xl sm:text-2xl font-bold text-[#8B4513] mb-4">
+        <h3
+          className="text-xl sm:text-2xl font-bold text-[#8B4513] mb-4"
+          data-aos="fade-up"
+        >
           Favorite Foods
         </h3>
         <Marquee
@@ -91,6 +109,8 @@ const About = () => {
             <div
               key={i}
               className="flex flex-col items-center justify-center text-[#8B4513] mx-2 sm:mx-4 gap-1 sm:gap-2 w-auto h-20 sm:h-28 p-1 sm:p-4"
+              data-aos="zoom-in" // AOS animation for each food item
+              data-aos-delay={i * 100} // Optional delay for staggered effect
             >
               {food.component}
               <span className="text-sm md:text-lg font-bold text-center">

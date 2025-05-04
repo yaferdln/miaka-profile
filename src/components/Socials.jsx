@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   FaFacebook,
   FaTwitter,
@@ -5,6 +6,8 @@ import {
   FaTiktok,
   FaTelegramPlane,
 } from "react-icons/fa";
+import AOS from "aos"; // Import AOS
+import "aos/dist/aos.css"; // Import AOS styles
 
 const socials = [
   {
@@ -40,15 +43,22 @@ const socials = [
 ];
 
 const Socials = () => {
+  useEffect(() => {
+    AOS.init(); // Initialize AOS
+  }, []);
+
   return (
     <section
       id="socials"
       className="min-h-screen flex flex-col items-center justify-center text-[#8B4513] px-4"
     >
-      <h1 className="text-3xl md:text-4xl font-bold mb-8 neon-title">
+      <h1
+        className="text-3xl md:text-4xl font-bold mb-8 neon-title"
+        data-aos="fade-up"
+      >
         Let's Connect
       </h1>
-      <div className="grid grid-cols-5 md:grid-cols-5 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
         {socials.map((social, i) => (
           <a
             key={i}
@@ -59,6 +69,8 @@ const Socials = () => {
             style={{
               color: social.color,
             }}
+            data-aos="zoom-in" // AOS animation for each social icon
+            data-aos-delay={i * 100} // Optional delay for staggered effect
           >
             {social.icon}
             <span className="sr-only">{social.name}</span>
