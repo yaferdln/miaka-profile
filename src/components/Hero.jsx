@@ -17,10 +17,7 @@ const Hero = () => {
     <section className="pt-16">
       <div className="flex flex-col text-center md:flex-row justify-between items-center h-screen p-4 overflow-hidden">
         {/* Swiper Image Slider */}
-        <div
-          className="w-full md:w-1/2 h-115 overflow-hidden relative"
-          data-aos="fade-up" // AOS animation
-        >
+        <div className="w-full md:w-1/2 h-115 overflow-hidden relative">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={10}
