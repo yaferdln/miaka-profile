@@ -19,7 +19,7 @@ const Hero = () => {
         {/* Swiper Image Slider */}
         <div
           className="w-full md:w-1/2 h-115 overflow-hidden relative"
-          data-aos="fade-right" // AOS animation
+          data-aos="fade-up" // AOS animation
         >
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
