@@ -5,7 +5,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white text-[#8B4513] p-4 shadow-md z-50">
+    <nav className="fixed top-0 left-0 w-full bg-[#F8F8E1] text-[#8B4513] p-4 shadow-md z-50">
       <div className="flex justify-between items-center max-w-7xl mx-auto">
         <h1 className="text-xl font-bold">Miaka's Profile</h1>
 

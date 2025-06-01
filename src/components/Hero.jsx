@@ -79,14 +79,18 @@ const Hero = () => {
           <p className="text-xl md:text-4xl font-extrabold text-[#8B4513] mb-4">
             🤎
           </p>
-          <p className="text-2xl md:text-4xl font-extrabold text-[#8B4513]">
+          <p className="text-xl md:text-2xl font-extrabold text-[#8B4513]">
             {""}
             <Typewriter
               words={[
-                "Watching movies",
-                "Reading",
-                "Listening to music",
-                "Traveling",
+                "Empathetic and thoughtful",
+                "Imaginative with a love for stories",
+                "A little dramatic in the best way",
+                "Emotionally expressive and open",
+                "Soft-spoken but deep-thinking",
+                "Romantic at heart",
+                "Curious about the world and people",
+                "Loves creating little moments of magic",
               ]}
               loop={0}
               cursor
